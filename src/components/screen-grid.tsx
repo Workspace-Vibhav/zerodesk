@@ -165,8 +165,22 @@ export function ScreenGrid({ initialScreens }: ScreenGridProps) {
     });
   };
 
+  const getDevVerified = (screen: Screen) => {
+    return variation === "desktop" ? screen.desktopDevVerified : screen.mobileDevVerified;
+  };
+
   const filteredScreens = screens.filter((s) => {
-    const matchesFilter = filter === "ALL" || getStatus(s) === filter;
+    const status = getStatus(s);
+    let matchesFilter = false;
+
+    if (filter === "ALL") {
+      matchesFilter = true;
+    } else if (filter === "DONE_UNVERIFIED") {
+      matchesFilter = status === "DONE" && !getDevVerified(s);
+    } else {
+      matchesFilter = status === filter;
+    }
+
     const matchesSearch = search === "" || s.name.toLowerCase().includes(search.toLowerCase());
     return matchesFilter && matchesSearch;
   });
@@ -234,6 +248,23 @@ export function ScreenGrid({ initialScreens }: ScreenGridProps) {
             </Button>
           );
         })}
+
+        {/* Dev Unverified filter */}
+        {(() => {
+          const unverifiedCount = screens.filter(
+            (s) => getStatus(s) === "DONE" && !getDevVerified(s)
+          ).length;
+          return unverifiedCount > 0 ? (
+            <Button
+              variant={filter === "DONE_UNVERIFIED" ? "default" : "outline"}
+              size="sm"
+              onClick={() => setFilter("DONE_UNVERIFIED")}
+              className="text-orange-600 border-orange-300"
+            >
+              Dev Pending ({unverifiedCount})
+            </Button>
+          ) : null;
+        })()}
 
         <div className="flex-1" />
 
