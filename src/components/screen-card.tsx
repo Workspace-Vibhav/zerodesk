@@ -127,14 +127,16 @@ export function ScreenCard({
           <div className="font-medium leading-tight">{screen.name}</div>
 
           <Popover open={popoverOpen} onOpenChange={setPopoverOpen}>
-            <PopoverTrigger asChild>
-              <Button
-                variant="ghost"
-                size="icon"
-                className={`h-7 w-7 shrink-0 ${currentFigmaLink ? 'text-purple-600' : 'text-muted-foreground'}`}
-              >
-                <PenTool className="w-4 h-4" />
-              </Button>
+            <PopoverTrigger
+              render={
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className={`h-7 w-7 shrink-0 ${currentFigmaLink ? 'text-purple-600' : 'text-muted-foreground'}`}
+                />
+              }
+            >
+              <PenTool className="w-4 h-4" />
             </PopoverTrigger>
             <PopoverContent className="w-80" align="end">
               <div className="space-y-3">
