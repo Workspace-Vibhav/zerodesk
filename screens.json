@@ -1,0 +1,99 @@
+{
+  "screens": [
+    {
+      "key": "home",
+      "name": "Home",
+      "path": "/home"
+    },
+    {
+      "key": "file-preview",
+      "name": "File preview",
+      "path": "/file/preview"
+    },
+    {
+      "key": "file-directory",
+      "name": "File directory",
+      "path": "/file/directory"
+    },
+    {
+      "key": "imports",
+      "name": "Imports",
+      "path": "/imports"
+    },
+    {
+      "key": "upload-and-download",
+      "name": "Upload and Download",
+      "path": "/upload-download"
+    },
+    {
+      "key": "notifications",
+      "name": "Notifications",
+      "path": "/notifications"
+    },
+    {
+      "key": "trash",
+      "name": "Trash",
+      "path": "/trash"
+    },
+    {
+      "key": "meetings",
+      "name": "Meetings",
+      "path": "/meetings"
+    },
+    {
+      "key": "workspace-chat",
+      "name": "Workspace - Chat",
+      "path": "/workspace/chat"
+    },
+    {
+      "key": "workspace-task",
+      "name": "Workspace - Task",
+      "path": "/workspace/task"
+    },
+    {
+      "key": "workspace-listing-settings-audit",
+      "name": "Workspace - Listing, Settings and Audit",
+      "path": "/workspace/listing"
+    },
+    {
+      "key": "zerohands",
+      "name": "Zerohands",
+      "path": "/zerohands"
+    },
+    {
+      "key": "search",
+      "name": "Search",
+      "path": "/search"
+    },
+    {
+      "key": "user-profile",
+      "name": "User Profile",
+      "path": "/user/profile"
+    },
+    {
+      "key": "signup",
+      "name": "Signup",
+      "path": "/signup"
+    },
+    {
+      "key": "popups",
+      "name": "Popups",
+      "path": null
+    },
+    {
+      "key": "doc-editor",
+      "name": "Doc Editor",
+      "path": "/docs/editor"
+    },
+    {
+      "key": "calendar",
+      "name": "Calendar",
+      "path": "/calendar"
+    },
+    {
+      "key": "assistant",
+      "name": "Assistant",
+      "path": "/assistant"
+    }
+  ]
+}

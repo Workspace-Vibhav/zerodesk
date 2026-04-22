@@ -1,0 +1,35 @@
+// Prisma schema for Zerodesk - Design Implementation Tracker
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Screen {
+  id            String   @id @default(cuid())
+  key           String   @unique // from screens.json
+  name          String
+  path          String? // route path
+  desktopFigmaLink  String? // Figma design link for desktop
+  mobileFigmaLink   String? // Figma design link for mobile
+  desktopStatus String   @default("NOT_STARTED")
+  mobileStatus  String   @default("NOT_STARTED")
+  // Desktop review approvals
+  desktopVibhav   Boolean @default(false)
+  desktopAnushree Boolean @default(false)
+  desktopFelix    Boolean @default(false)
+  // Mobile review approvals
+  mobileVibhav   Boolean @default(false)
+  mobileAnushree Boolean @default(false)
+  mobileFelix    Boolean @default(false)
+  // Dev verification (for DONE screens)
+  desktopDevVerified Boolean @default(false)
+  mobileDevVerified  Boolean @default(false)
+  updatedAt     DateTime @updatedAt
+  updatedBy     String?
+  notes         String?
+}
