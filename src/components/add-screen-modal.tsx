@@ -48,11 +48,9 @@ export function AddScreenModal({ onAdd }: AddScreenModalProps) {
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogTrigger asChild>
-        <Button className="flex items-center gap-2">
-          <Plus className="w-4 h-4" />
-          Add Screen
-        </Button>
+      <DialogTrigger render={<Button className="flex items-center gap-2" />}>
+        <Plus className="w-4 h-4" />
+        Add Screen
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
